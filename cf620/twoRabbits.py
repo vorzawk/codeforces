@@ -1,8 +1,8 @@
 t = int(input())
 for _ in range(t):
+    ans = -1
     x,y,a,b = map(int, input().split())
     if (y-x) % (a+b) == 0:
-        print((y-x)//(a+b))
-    else:
-        print(-1)
+        ans = (y-x)//(a+b)
+    print(ans)
 

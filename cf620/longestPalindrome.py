@@ -3,13 +3,13 @@ n,m = map(int, input().split())
 strSet = set()
 l = []
 r = []
-longPal = ''
+mid = ''
 for _ in range(n):
     s = input()
     t = s[::-1]
-    if s == t and len(s) > len(longPal):
-        longPal = s
-    if t in strSet:
+    if s == t:
+        mid = s
+    elif t in strSet:
         l.append(s)
         r.append(t)
         strSet.remove(t)
@@ -17,8 +17,6 @@ for _ in range(n):
         strSet.add(s)
 
 r.reverse()
-ls = ''.join(l)
-rs = ''.join(r)
-ans = ''.join([ls,longPal,rs])
+ans = ''.join(l + [mid] + r)
 print(len(ans))
 print(ans)
