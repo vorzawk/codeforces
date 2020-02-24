@@ -1,7 +1,11 @@
+from sys import stdin
+input = stdin.readline
+
 n, k = map(int, input().split())
 deck = set()
 for _ in range(n):
-    deck.add(input())
+    card = input().split()[0]
+    deck.add(card)
 ans = 0
 
 def thirdChar(a, b):
